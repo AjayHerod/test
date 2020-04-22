@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PAGE2</title>
+    </head>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.14.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="/__/firebase/7.14.1/firebase.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBYTBVZvw66dGF-8IqJ-xtEs9WUYKpVeZE",
+    authDomain: "cps847-assignment3.firebaseapp.com",
+    databaseURL: "https://cps847-assignment3.firebaseio.com",
+    projectId: "cps847-assignment3",
+    storageBucket: "cps847-assignment3.appspot.com",
+    messagingSenderId: "736916587115",
+    appId: "1:736916587115:web:7071526faec4918301a72e",
+    measurementId: "G-FDPEYTTPDK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+    <body>
+        <script>
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    document.body.innerHTML = '<h1> Congrats ' + user.displayName + ', you are done! </h1>';
+                } else {
+                    console.log("no user signed in");
+                }
+            });
+        </script>
+    </body>
+</html>
